@@ -46,13 +46,16 @@ void function()
 {
 	Tlist *t = head;
 	Tlist *n = tail;
-	int s = 0,a;
+	int s = 0,a,b=0;
 	while (t != NULL)
 	{
+		if (t->x == n->x)
+			b = t->x*n->x;
 		a = t->x*n->x;
 		s += a;
+		//std::cout << s << std::endl;
 		t = t->next;
 		n = n->prev;
 	}
-	std::cout << s << std::endl;
+	std::cout << s+b << std::endl;
 }
